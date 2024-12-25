@@ -1,0 +1,49 @@
+<!--mat-card>
+    <img mat-card-image [src]="cocktail.strDrinkThumb" alt="Image du cocktail" />
+    <mat-card-title>{{ cocktail.strDrink }}</mat-card-title>
+    <mat-card-content>
+      <p>{{ cocktail.strInstructions }}</p>
+    </mat-card-content>
+  </mat-card-->
+
+
+  <div fxLayout="row wrap" fxLayoutAlign="space-around center" fxLayoutGap="25px">
+    <!-- Mat Card for each cocktail -->
+    <mat-card fxFlex="calc(33% - 25px)" fxFlex.sm="calc(50% - 25px)" class="cocktail-card">
+      
+      <!-- Cocktail Card Header -->
+      <mat-card-header>
+        <div mat-card-avatar class="cocktail-card-avatar"></div>
+        <mat-card-title>{{ cocktail.strDrink }}</mat-card-title>
+        <mat-card-subtitle>{{ cocktail.strCategory }}</mat-card-subtitle>
+      </mat-card-header>
+      
+      <!-- Cocktail Image Section -->
+      <img mat-card-image [src]="cocktail.strDrinkThumb" alt="Cocktail Image" />
+  
+      <!-- Action Button for Navigation to Cocktail Details Page -->
+      <mat-card-actions>
+        <button mat-button [routerLink]="['/cocktail-details', cocktail.idDrink]">
+          View Details
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  
+  <!--mat-card class="cocktail-card">
+    <img mat-card-image [src]="cocktail.strDrinkThumb" alt="Cocktail Image" />
+    
+    <mat-card-title>{{ cocktail.strDrink }}</mat-card-title>
+    
+    <mat-card-content>
+      <p><strong>Category:</strong> {{ cocktail.strCategory }}</p>
+      <p><strong>Type:</strong> {{ cocktail.strAlcoholic }}</p>
+    </mat-card-content>
+  
+    <mat-card-actions>
+      <button mat-button [routerLink]="['/cocktail-details', cocktail.idDrink]">
+        View Details
+      </button>
+    </mat-card-actions>
+  </mat-card-->
+  

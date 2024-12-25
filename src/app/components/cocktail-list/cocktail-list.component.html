@@ -1,0 +1,27 @@
+<div class="cocktail-list">
+  <ng-container *ngIf="!loading; else loadingTemplate">
+    <app-cocktail-card
+      *ngFor="let cocktail of cocktails"
+      [cocktail]="cocktail"
+    ></app-cocktail-card>
+  </ng-container>
+
+  <ng-template #loadingTemplate>
+    <div class="spinner-container">
+      <mat-spinner></mat-spinner>
+      <p>Loading cocktails...</p>
+    </div>
+  </ng-template>
+</div>
+
+<div class="refresh-button-container">
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="refreshCocktails()"
+    [disabled]="loading"
+    class="refresh-button"
+  >
+    Refresh Cocktails
+  </button>
+</div>
